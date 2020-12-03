@@ -1,10 +1,12 @@
+//test
+
 let modal = document.querySelector('.modal');
 let noteForm = document.querySelector('.note-form');
 let noteTable = document.querySelector('.note-table');
 let cancel = document. querySelector('.cancel-btn');
 
 let noteDeleteButtons;
-let noteList = JSON.parse(localStorage.getItem('notes'));
+let noteList = JSON.parse(localStorage.getItem('notes')) || [];
 
 noteForm.addEventListener('submit', (e)=>{
   addNote(e);
@@ -33,13 +35,42 @@ function addNote(e){
 
 }
 
+// function appendNotes(){
+//   let notes = Array.from(document.querySelector('.noteItem'));
+//   if(notes.length > 0){
+//     notes.forEach(note =>{
+//       note.remove();
+//     })
+//   }
+//
+//   noteList.map(note =>{
+//     //Create table cells
+//     let tr = document.createElement('tr');
+//     tr.classList = 'noteItem';
+//     let tdTitle = document.createElement('td');
+//     tdTitle.innerText = note.title;
+//     let tdNote = document.createElement('td');
+//     tdNote.innerText = note.note;
+//     let tdDelete = document.createElement('td');
+//     tdDelete.innerHTML = '&times';
+//     tdDelete.classList.add('delete-item');
+//
+//     //Append cells to table row
+//     tr.appendChild(tdTitle);
+//     tr.appendChild(tdNote);
+//     tr.appendChild(tdDelete);
+//
+//     //Append row to table
+//     noteTable.appendChild(tr);
+//     getDeleteButtons();
+//     localStorage.setItem('notes', JSON.stringify(noteList));
+//   })
+// }
+
 function appendNotes(){
-  let notes = Array.from(document.querySelector('.noteItem'));
-  if(notes.length > 0){
-    notes.forEach(note =>{
-      note.remove();
-    })
-  }
+
+
+  noteTable.innerHTML =''; // clear the table before appending new note
 
   noteList.map(note =>{
     //Create table cells
