@@ -28,8 +28,8 @@ body, html{
   background-size: cover;
   color: #ffffff;
 }
-
 input{
+    margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
     background: transparent;
@@ -38,7 +38,6 @@ input{
     color: #ffffff;
     color: black;
 }
-
 h1{
     position: relative;
     text-align: center;
@@ -54,7 +53,7 @@ h1{
     z-index: 9999;
     opacity: 0;
     border: 1px solid black;
-    transition: 0.2s ease-in;
+    transition: .7s ease-in;
     border-radius: 5px;
 }
 .modal:target{
@@ -101,7 +100,7 @@ td{
 .delete-item{
   font-size: 1.5rem;
 }
-.delete:hover{
-  color: rgb(133, 251, 255);
+.delete-item:hover{
+  color: red;
   cursor: pointer;
 }
